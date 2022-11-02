@@ -1,8 +1,10 @@
-# BeEF en ubuntu 22.04
+# BeEF en Ubuntu 22.04
 
-En este repositorio voy a explicar como instalar BeEF en ubuntu 22.04.
+<p align="center"><img src="https://www.kali.org/tools/beef-xss/images/beef-xss-logo.svg" alt="BeEF Browser Exploit" width="150" height="150"></p>
 
-Lo necesario para llevar a cabo exitosamente la instalación es tener instalado los siguientes paquetes en un sistema operativo ubuntu 22.04:
+En este repositorio voy a explicar como instalar BeEF en Ubuntu 22.04.
+
+Lo necesario para llevar a cabo exitosamente la instalación es tener instalado los siguientes paquetes en un sistema operativo Ubuntu 22.04:
 
 * BeEF Browser Exploitation Framework
 * ruby
@@ -45,6 +47,25 @@ sudo ./install
 
 ## Configuramos BeEF
 
-Para configurar BeEF, ejecutamos el siguiente comando:
+Lo único que tendremos que realizar es configurar unas credenciales más fuertes que las que vienen por default en el archivo de configuración de BeEF, para ello, ejecutamos el siguiente comando:
 
 ```bash
+nano config.yaml
+```
+
+Y en el archivo de configuración, modificamos las siguientes líneas:
+
+```yaml
+beef:
+  credentials:
+    user: "admin"
+    pass: "admin"
+```
+
+## Iniciamos BeEF
+
+Para iniciar BeEF, ejecutamos el siguiente comando:
+
+```bash
+sudo ./beef
+```
